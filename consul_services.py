@@ -36,7 +36,7 @@ def main():
         nodes = list_nodes(consul, service)
         output[service] = nodes
 
-    print json.dumps(output, indent=4)
+    print json.dumps(output, indent=4, sort_keys=True)
 
 if __name__ == '__main__':
     main()
