@@ -12,11 +12,11 @@ def list_nodes(consul, service):
     r = requests.get(path)
     nodes = [
                 {
-                    'Node': n['Node'],
-                    'Datacenter': n['Datacenter'],
-                    'ServiceAddress': n['ServiceAddress'],
-                    'ServicePort': n['ServicePort'],
-                    'Address': n['Address'],
+                    'Node': n.get('Node', None),
+                    'Datacenter': n.get('Datacenter', None),
+                    'ServiceAddress': n.get('ServiceAddress', None),
+                    'ServicePort': n.get('ServicePort', None),
+                    'Address': n.get('Address', None),
                 } \
             for n in r.json()]
     return nodes
